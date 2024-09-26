@@ -3,12 +3,13 @@ package ar.edu.unq.po2.tp3;
 public class ProductoPrimeraNecesidad {
 	private String nombre;
 	private double precio;
-	private boolean esPrimeraNecesidad;
+	private boolean esPrecioCuidado;
 
-	public ProductoPrimeraNecesidad(String nombre, double precio, boolean esPrimeraNecesidad) {
+	public ProductoPrimeraNecesidad(String nombre, double precio, double descuento, boolean esPrecioCuidado) {
+		//El descuento se expresa en porcentaje del 1 al 100
 		this.nombre = nombre;
-		this.precio = precio * 0.9;
-		this.esPrimeraNecesidad = esPrimeraNecesidad;
+		this.precio = precio - (precio * descuento)/100;
+		this.esPrecioCuidado = esPrecioCuidado;
 	}
 	
 	public String getNombre() {
@@ -20,15 +21,16 @@ public class ProductoPrimeraNecesidad {
 	public double getPrecio() {
 		return precio;
 	}
-	public void setPrecio(double precio) {
-		this.precio = precio * 0.9;
+	public void setPrecio(double precio, double descuento) {
+		//El descuento se expresa en porcentaje del 1 al 100
+		this.precio = precio - (precio * descuento)/100;
 	}
-	public boolean isEsPrimeraNecesidad() {
-		return esPrimeraNecesidad;
+	public boolean esPrecioCuidado() {
+		return esPrecioCuidado;
 	}
 
-	public void setEsPrimeraNecesidad(boolean esPrimeraNecesidad) {
-		this.esPrimeraNecesidad = esPrimeraNecesidad;
+	public void setPrecioCuidado(boolean esPrecioCuidado) {
+		this.esPrecioCuidado = esPrecioCuidado;
 	}
 }
 
