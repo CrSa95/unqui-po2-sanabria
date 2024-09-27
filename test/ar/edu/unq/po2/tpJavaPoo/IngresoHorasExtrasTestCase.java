@@ -1,9 +1,11 @@
-package ar.edu.unq.po2.tp3;
+package ar.edu.unq.po2.tpJavaPoo;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import ar.edu.unq.po2.tpJavaPoo.IngresoHorasExtras;
 
 public class IngresoHorasExtrasTestCase {
 	

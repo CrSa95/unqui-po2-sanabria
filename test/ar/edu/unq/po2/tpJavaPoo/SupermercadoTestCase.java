@@ -1,10 +1,13 @@
-package ar.edu.unq.po2.tp3;
+package ar.edu.unq.po2.tpJavaPoo;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import ar.edu.unq.po2.tpJavaPoo.Producto;
+import ar.edu.unq.po2.tpJavaPoo.Supermercado;
+
 import static org.junit.jupiter.api.Assertions.*;
 
-public class SupermercadoTest {
+public class SupermercadoTestCase {
 	
 	private Producto arroz;
 	private Producto detergente;
