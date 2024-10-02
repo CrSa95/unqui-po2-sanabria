@@ -26,7 +26,7 @@ public class TrabajadorTestCase {
 	public void testTotalPercibido() {
 		assertEquals(0.0, trabajador.getTotalPercibido());
 		trabajador.agregarIngreso(porHijos);
-		trabajador.agregarIngresoHsExtras(hsExtras);
+		trabajador.agregarIngreso(hsExtras);
 		assertEquals(4000, trabajador.getTotalPercibido());
 	}
 	
@@ -34,7 +34,7 @@ public class TrabajadorTestCase {
 	public void testMontoImponible() {
 		assertEquals(0.0, trabajador.getMontoImponible());
 		trabajador.agregarIngreso(porHijos);
-		trabajador.agregarIngresoHsExtras(hsExtras);
+		trabajador.agregarIngreso(hsExtras);
 		assertEquals(2000, trabajador.getMontoImponible());
 	}
 	
@@ -42,7 +42,7 @@ public class TrabajadorTestCase {
 	public void testImpuestoAPagar() {
 		assertEquals(0.0, trabajador.getImpuestoAPagar());
 		trabajador.agregarIngreso(porHijos);
-		trabajador.agregarIngresoHsExtras(hsExtras);
+		trabajador.agregarIngreso(hsExtras);
 		assertEquals(40, trabajador.getImpuestoAPagar());
 	}
 }

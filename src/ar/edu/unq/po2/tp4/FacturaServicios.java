@@ -1,19 +1,15 @@
 package ar.edu.unq.po2.tp4;
 
-public class FacturaServicios implements Factura {
+public class FacturaServicios extends Factura {
 	
-	private double costo;
-	private int unidadConsumida; 
-	
-	public FacturaServicios(double costo, int unidadConsumida) {
-		this.costo = costo;
-		this.unidadConsumida = unidadConsumida;
+	FacturaServicios(double costo, int unidadConsumida) {
+		super(costo, unidadConsumida);
+		// TODO Auto-generated constructor stub
 	}
-	
-	@Override
-	public double getMonto() {
-		
-		return this.costo * this.unidadConsumida;
+
+	@Override 
+	public double montoAPagar() {
+		return costo*unidadConsumida;
 	}
 
 }

@@ -11,9 +11,7 @@ public class CajaTestCase {
 	private FacturaServicios facturaLuz;
 	private FacturaImpuestos facturaImp;
 	private Caja caja;
-	private AgenciaServicios agenciaServis;
-	private AgenciaImpuestos agenciaImp;
-	
+
 	@BeforeEach
 	public void setUp() {
 		arroz = new ProductoEmpresaTradicional("Arroz", 18.5, 1);
@@ -21,8 +19,6 @@ public class CajaTestCase {
 		caja = new Caja();
 		facturaLuz = new FacturaServicios(150.5, 10);
 		facturaImp = new FacturaImpuestos(150.5);
-		agenciaServis = new AgenciaServicios();
-		agenciaImp = new AgenciaImpuestos();
 	}
 	
 	@Test
@@ -39,13 +35,9 @@ public class CajaTestCase {
 	
 	@Test
 	public void testRegistrarFactura() {
-		assertEquals(0, agenciaServis.getTotalAbonado());
-		assertEquals(0, agenciaImp.getTotalAbonado());
 		assertEquals(0, caja.getTotal());
-		caja.registrarFactura(facturaLuz,agenciaServis);
-		caja.registrarFactura(facturaImp,agenciaImp);
+		caja.registrarProducto(facturaLuz);
+		caja.registrarProducto(facturaImp);
 		assertEquals(1655.5, caja.getTotal());
-		assertEquals(1505, agenciaServis.getTotalAbonado());
-		assertEquals(150.5, agenciaImp.getTotalAbonado());
 	}
 }

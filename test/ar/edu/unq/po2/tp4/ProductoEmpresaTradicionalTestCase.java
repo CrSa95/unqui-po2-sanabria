@@ -16,7 +16,7 @@ public class ProductoEmpresaTradicionalTestCase {
 	@Test
 	public void testConstructor() {
 		assertEquals("Arroz", arroz.getNombre());
-		assertEquals(18.9, arroz.getPrecio());
+		assertEquals(18.9, arroz.montoAPagar());
 		assertEquals(1,arroz.getStock());
 	}
 	

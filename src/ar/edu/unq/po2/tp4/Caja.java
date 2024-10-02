@@ -10,14 +10,15 @@ public class Caja {
 		return total;
 	}
 	
-	public void registrarProducto(Producto producto) {
-		this.total += producto.getPrecio();
-		producto.decrementarStock();
+	public void registrarProducto(Pagar objeto) {
+		this.total += objeto.montoAPagar();
+		objeto.registrarElPago(objeto);
 	}
+	/*
+	public void registrarFactura(Factura factura) {
+		this.total += factura.montoAPagar();
+		registrarPago(factura);
+	}
+	*/
 	
-	public void registrarFactura(Factura factura, Agencia agencia) {
-		this.total += factura.getMonto();
-		agencia.registrarPago(factura);
-	}
-
 }

@@ -15,6 +15,6 @@ public class FacturaImpuestosTestCase {
 	
 	@Test
 	public void testGetMonto() {
-		assertEquals(150.5, facturaImp.getMonto());
+		assertEquals(150.5, facturaImp.montoAPagar());
 	}
 }

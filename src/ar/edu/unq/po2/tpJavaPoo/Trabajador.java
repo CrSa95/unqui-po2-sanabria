@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Trabajador {
 	private List<Ingreso> ingresosAnuales = new ArrayList<Ingreso>();
-	private List<IngresoHorasExtras> ingresosAnualesHsExtras = new ArrayList<IngresoHorasExtras>();
+	//private List<IngresoHorasExtras> ingresosAnualesHsExtras = new ArrayList<IngresoHorasExtras>();
 	
 	public Trabajador() {
 	}
@@ -14,17 +14,15 @@ public class Trabajador {
 		this.ingresosAnuales.add(ingreso);
 	}
 	
-	public void agregarIngresoHsExtras(IngresoHorasExtras hsExtras) {
-		this.ingresosAnualesHsExtras.add(hsExtras);
-	}
+	//public void agregarIngresoHsExtras(IngresoHorasExtras hsExtras) {
+	//	this.ingresosAnualesHsExtras.add(hsExtras);
+	//}
 	
 	public double getTotalPercibido() {
 		//total 
 		double sumaTotal = 0;	
 		for(Ingreso i: ingresosAnuales){
-			for(IngresoHorasExtras ihs: ingresosAnualesHsExtras){
-			sumaTotal += ihs.getMonto() + i.getMonto();
-			}
+			sumaTotal += i.getMonto()+i.getmontoHsExtras();
 		}
 		return sumaTotal;
 	}
@@ -32,18 +30,12 @@ public class Trabajador {
 		//la suma de todos los ingresos, excluyendo hs extras 
 		double sumaTotal = 0;	
 		for(Ingreso i: ingresosAnuales){
-			for(IngresoHorasExtras ihs: ingresosAnualesHsExtras){
-			sumaTotal += ihs.getMontoImponible() + i.getMontoImponible();
-			}
+			sumaTotal += i.getMontoImponible();
 		}
 		return sumaTotal;
 	}
 	public double getImpuestoAPagar() {
 		//monto 2% del total de los ingresos imponibles
-		double sumaTotal = 0;	
-		for(Ingreso i: ingresosAnuales){
-			sumaTotal += (i.getMontoImponible()*2)/100;
-			}
-		return sumaTotal;
+		return (getMontoImponible()*2)/100;
 	}
 }

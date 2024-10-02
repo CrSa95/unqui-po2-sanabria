@@ -16,7 +16,7 @@ public class ProductoCooperativaTestCase {
 	@Test
 	public void testConstructor() {
 		assertEquals("Miel", miel.getNombre());
-		assertEquals(18.45, miel.getPrecio());
+		assertEquals(18.45, miel.montoAPagar());
 		assertEquals(2,miel.getStock());
 	}
 	

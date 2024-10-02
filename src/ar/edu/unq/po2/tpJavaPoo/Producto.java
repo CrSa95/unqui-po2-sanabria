@@ -16,6 +16,13 @@ public class Producto {
 		this.esPrecioCuidado = esPrecioCuidado;
 	}
 	
+	public Producto(String nombre, double precio, double descuento, boolean esPrecioCuidado) {
+		//El descuento se expresa en porcentaje del 1 al 100
+		this.nombre = nombre;
+		this.precio = precio - (precio * descuento)/100;
+		this.esPrecioCuidado = esPrecioCuidado;
+	}
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -32,10 +39,6 @@ public class Producto {
 		return esPrecioCuidado;
 	}
 
-	public void esPrecioCuidado(boolean esPrecioCuidado) {
-		this.esPrecioCuidado = esPrecioCuidado;
-	}	
-	
 	public void aumentarPrecio(double precioNuevo) {
 		this.precio += precioNuevo;
 	}
