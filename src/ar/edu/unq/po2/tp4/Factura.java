@@ -4,7 +4,7 @@ abstract class Factura implements Pagar, Agencia {
 	
 	double tasaServicio;
 	double costo;
-	double unidadConsumida;
+	int unidadConsumida;
 
 	Factura(double tasaServicio) {
 		this.tasaServicio = tasaServicio;

@@ -8,7 +8,7 @@ abstract class Producto implements Pagar {
 	
 	Producto(String nombre, double precio, int stock) {
 		this.nombre = nombre;
-		this.precio = precio;
+		setPrecio(precio);
 		this.stock = stock;
 	}
 	
@@ -32,5 +32,9 @@ abstract class Producto implements Pagar {
 
 	String getNombre() {
 		return nombre;
+	}
+	
+	void setPrecio(double precio){
+		this.precio = precio;
 	}
 }
