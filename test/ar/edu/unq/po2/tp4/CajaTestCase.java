@@ -19,6 +19,8 @@ public class CajaTestCase {
 		caja = new Caja();
 		facturaLuz = new FacturaServicios(150.5, 10);
 		facturaImp = new FacturaImpuestos(150.5);
+		caja.setProducto(arroz);
+		caja.setProducto(miel);
 	}
 	
 	@Test
@@ -26,8 +28,7 @@ public class CajaTestCase {
 		assertEquals(0, caja.getTotal());
 		assertEquals(1, arroz.getStock());
 		assertEquals(2, miel.getStock());
-		caja.registrarProducto(arroz);
-		caja.registrarProducto(miel);
+		caja.registrarOperacion();
 		assertEquals(36.95, caja.getTotal());
 		assertEquals(0, arroz.getStock());
 		assertEquals(1, miel.getStock());
@@ -36,8 +37,8 @@ public class CajaTestCase {
 	@Test
 	public void testRegistrarFactura() {
 		assertEquals(0, caja.getTotal());
-		caja.registrarProducto(facturaLuz);
-		caja.registrarProducto(facturaImp);
+		caja.registrarOperacion(facturaLuz);
+		caja.registrarOperacion(facturaImp);
 		assertEquals(1655.5, caja.getTotal());
 	}
 }

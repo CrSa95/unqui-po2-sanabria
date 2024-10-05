@@ -1,6 +1,6 @@
 package ar.edu.unq.po2.tp4;
 
-abstract class Producto implements Pagar {
+abstract class Producto {
 	
 	String nombre;  
 	double precio; 
@@ -11,22 +11,16 @@ abstract class Producto implements Pagar {
 		setPrecio(precio);
 		this.stock = stock;
 	}
-	
-	@Override 
-	public double montoAPagar() {
+
+	public double getPrecio() {
 		return precio;
 	}
 
-	int getStock() {
+	public int getStock() {
 		return stock;
 	}
 	
-	@Override
-	public <T> void registrarElPago(T objeto) {
-		decrementarStock();
-	}
-	
-	void decrementarStock() {
+	public void decrementarStock() {
 		this.stock -= 1;
 	}
 
@@ -34,7 +28,7 @@ abstract class Producto implements Pagar {
 		return nombre;
 	}
 	
-	void setPrecio(double precio){
+	public void setPrecio(double precio){
 		this.precio = precio;
 	}
 }

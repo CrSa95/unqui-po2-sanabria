@@ -8,7 +8,7 @@ public class ProductoCooperativa extends Producto {
 	}
 	
 	@Override
-	void setPrecio(double precio){
+	public void setPrecio(double precio){
 		this.precio = precio - (precio * 10)/100;
 	}
 }

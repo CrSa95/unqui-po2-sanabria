@@ -1,6 +1,6 @@
 package ar.edu.unq.po2.tp4;
 
-abstract class Factura implements Pagar, Agencia {
+abstract class Factura {
 	
 	double tasaServicio;
 	double costo;
@@ -14,20 +14,9 @@ abstract class Factura implements Pagar, Agencia {
 		this.costo = costo;
 		this.unidadConsumida = unidadConsumida;
 	}
-	
-	@Override 
+
 	public double montoAPagar() {
 		return tasaServicio;
-	}
-	
-	@Override
-	public <T> void registrarElPago(T objeto) {
-		registrarPago((Factura) objeto);
-	}
-	
-	@Override
-	public void registrarPago(Factura factura) {
-		System.out.println("Pago registrado");
 	}
 
 }
