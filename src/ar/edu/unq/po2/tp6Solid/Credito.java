@@ -2,10 +2,10 @@ package ar.edu.unq.po2.tp6Solid;
 
 public abstract class Credito{
 
-	int plazoMeses;
-	double montoSolicitado;
-	double cuotaMensual;
-	Propiedad propiedadHipotecada;
+	protected int plazoMeses;
+	protected double montoSolicitado;
+	protected double cuotaMensual;
+	protected Propiedad propiedadHipotecada;
 	
 	public Credito (int plazoMeses,double montoSolicitado) {
 		this.plazoMeses = plazoMeses;

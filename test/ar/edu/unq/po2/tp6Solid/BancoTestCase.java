@@ -37,14 +37,14 @@ public class BancoTestCase {
 	@Test
 	public void testSolicitarCredito() {
 		assertEquals(0,banco.getCreditos().size());
-		assertTrue(banco.solicitarCredito(creditoHipotecario, cliente1));
+		assertTrue(banco.registrarSolicitudCredito(creditoHipotecario, cliente1));
 		assertEquals(1,banco.getCreditos().size());
 	}
 	
 	@Test
 	public void testMontoTotalCreditos() {
-		banco.solicitarCredito(creditoHipotecario, cliente1);
-		banco.solicitarCredito(creditoPersonal, cliente2);
+		banco.registrarSolicitudCredito(creditoHipotecario, cliente1);
+		banco.registrarSolicitudCredito(creditoPersonal, cliente2);
 		assertEquals(12000000,banco.montoTotalCreditos());
 	}
 }

@@ -26,7 +26,7 @@ public class Cliente {
 	}
 	
 	public boolean solicitarCredito(Banco banco, Credito credito) {
-		return banco.solicitarCredito(credito, this);
+		return banco.registrarSolicitudCredito(credito, this);
 	}
 	
 	public String getNombre() {

@@ -23,16 +23,8 @@ public class Banco {
 		return solicitudesDeCredito;
 	}
 	
-	public boolean solicitarCredito(Credito credito, Cliente cliente) {
-		return registrarSolicitudCredito(credito, cliente);
-	} 
-	
 	public boolean registrarSolicitudCredito(Credito credito, Cliente cliente) {
 		this.solicitudesDeCredito.add(credito);
-		return evaluarCredito(credito, cliente);
-	}
-	
-	public boolean evaluarCredito(Credito credito, Cliente cliente) {
 		return credito.evaluarCredito(cliente);
 	}
 	
